@@ -121,7 +121,7 @@ In the following, I demonsate how my package can be applied to honeycomb lattice
 
 <img src="./demo/kagome2.png" alt="Alt Text" width="689" height="689">
 
-<img src="./demo/kagome2.png" alt="Alt Text" width="520" height="582">
+<img src="./demo/kagome3.png" alt="Alt Text" width="520" height="582">
 
 ## Updates
 
