@@ -58,9 +58,26 @@ This function returns a "Manipulate plot" for visualizaing the 2D lattice struct
 
 
 
+ * ``` AddHoppings[t_,i_,j_,R_]```
+
+This function sets the hopping terms for the defined lattice. The input ```t``` is the amplitude for the hoppings from ```i-th``` site of the source unit cell to the ```j-th``` site of the target unit cell.
+
+**Note that**: (1) The targe unit cell has a relative shift given by ```R``` with respect to the source unit cell. The shift given by ```R={r1,r2}``` is ```r1*v1+r2*v2```. Thus, ```r1``` and ```r2``` must be integers. The shift ```R``` could be zero, which represents the hopping is within one unit cell. Howver, when ```R={0,0}```, we must enforce that $i\neq j$, otherwise this would mean the energy at the same site. For setting the onsite energy, please use ``` AddOnsite[onsite_]``` instead (see following). 
+
+
+(2) Once the hopping from the source unit cell to the targer unit cell is set, there is no need to set the hopping from the target unit cell to the source unit cell. This function will automatically do that to ensure the Hermicity.
+
+
+(3) For case of multiple orbitals at each site, the hopping amplitude ```t``` is a matrix. For example, when specifying the hopping between first and second site, ```t``` is an o1-by-o2 matrix. For the single-orbital case, the hopping amplitude is a scalare but must be written in the 1-by-1 matrix form as ```t={{t0}}```.
+
+with additional 
+<br/><br/>
+
+
+
  * ``` AddOnsite[onsite_]```
 
-This function adds onsite energy to the model. The input ```onsite``` must be a list with real number and has the same length as the sum of all the orbital numbers at each sites within the unit cell (```Ttoal[orb]```). In another word,  The input ```onsite``` must has the same length of the Hamiltonian and it's added directly in the diagonal elements of the Hamiltonian.
+This function adds onsite energy to the model. The input ```onsite``` must be a list with real number and has the same length as the sum of all the orbital numbers at each sites within the unit cell (```Ttoal[orb]```). In another word,  The input ```onsite``` must has the same length of the Hamiltonian and it's added directly in the diagonal elements of the Hamiltonian. The first ```o1``` elements of ```onsite``` list specify the onsite energies of the corresponding ```o1``` orbitals at the first site of the unit cell. The second ```o2``` elements of ```onsite``` list specify the onsite energies of the corresponding ```o2``` orbitals at the second site of the unit cell. And so on so forth.
 <br/><br/>
 
 
@@ -78,7 +95,7 @@ This function clears all the hopping terms.
 
  * ``` PlotBands[xrange_,yrange_,Nx_,Ny_] ```
 
-This function clears all the hopping terms.
+This function plots the band spectrum of the designed tight-binding model. The inputs ```xrange={kxMin, kxMax}``` and ```yrange={kyMin, kyMax}``` contain the limit of crystal momentum $kx$ and $ky$ in the plotting. The inputs ```Nx``` and ```Ny``` control the sampling points along the kx and ky direction, respectively. Thus, one will have a $Nx\times Ny$ square mesh grid for plotting the band spectrum. 
 <br/><br/>
 
 
