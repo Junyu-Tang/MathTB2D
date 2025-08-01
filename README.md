@@ -105,18 +105,23 @@ This function clears all the hopping terms.
 
  * ``` PlotBands[xrange_, yrange_, Nx_, Ny_] ```
 
-This function plots the band spectrum of the designed tight-binding model. The inputs ```xrange={kxMin, kxMax}``` and ```yrange={kyMin, kyMax}``` contain the limit of crystal momentum $kx$ and $ky$ in the plotting. The inputs ```Nx``` and ```Ny``` control the sampling points along the kx and ky direction, respectively. Thus, one will have a $Nx\times Ny$ square mesh grid for plotting the band spectrum. 
+This function plots the band spectrum of the designed tight-binding model. The inputs ```xrange={kxMin, kxMax}``` and ```yrange={kyMin, kyMax}``` contain the limit of crystal momentum $kx$ and $ky$ in the plotting. The inputs ```Nx``` and ```Ny``` control the sampling points along the kx and ky direction, respectively. Thus, one will have a $Nx\times Ny$ square mesh grid for plotting the band spectrum. This function may be slow if the Hamiltonian is complicate or too larger. I would suggest the users to plot the band spectrum on their own by utilizing the ```GetHk[]``` function.
 <br/><br/>
 
 
 
 ## Examples
-In the following, I demonsate how my package can be applied to honeycomb lattice and the Kagome lattice. In the first case, we can see that in the band structure the Dirac cones around the K and K' valleys are successfully retrieved. In the second case, we see an additional flat bands. The notebook for these two examples can be found in the Demo folder. 
+In the following, I demonsate how my package can be applied to honeycomb lattice and the Kagome lattice. In the first case, we can see that in the band structure the Dirac cones around the K and K' valleys are successfully retrieved. In the second case, we see an additional absolutely flat band, which would become despersive when the next-nearest-neighbor hopping is turned on. The notebook for these two examples can be found in the demo folder. 
 
+<img src="./demo/graphene1.png" alt="Alt Text" width="709" height="1133">
 
+<img src="./demo/graphene2.png" alt="Alt Text" width="531" height="1012">
 
+<img src="./demo/kagome1.png" alt="Alt Text" width="705" height="988">
 
+<img src="./demo/kagome2.png" alt="Alt Text" width="689" height="689">
 
+<img src="./demo/kagome2.png" alt="Alt Text" width="520" height="582">
 
 ## Updates
 
