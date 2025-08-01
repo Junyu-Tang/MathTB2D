@@ -58,7 +58,7 @@ This function returns a "Manipulate plot" for visualizaing the 2D lattice struct
 
 
 
- * ``` AddHoppings[t_,i_,j_,R_]```
+ * ``` AddHoppings[t_, i_, j_, R_]```
 
 This function adds the hopping terms for the defined lattice. The input ```t``` is the amplitude for the hoppings from ```i-th``` site of the source unit cell to the ```j-th``` site of the target unit cell.
 
@@ -103,13 +103,23 @@ This function clears all the hopping terms.
 <br/><br/>
 
 
- * ``` PlotBands[xrange_,yrange_,Nx_,Ny_] ```
+ * ``` PlotBands[xrange_, yrange_, Nx_, Ny_] ```
 
 This function plots the band spectrum of the designed tight-binding model. The inputs ```xrange={kxMin, kxMax}``` and ```yrange={kyMin, kyMax}``` contain the limit of crystal momentum $kx$ and $ky$ in the plotting. The inputs ```Nx``` and ```Ny``` control the sampling points along the kx and ky direction, respectively. Thus, one will have a $Nx\times Ny$ square mesh grid for plotting the band spectrum. 
 <br/><br/>
 
 
 
+## Examples
+In the following, I demonsate how my package can be applied to honeycomb lattice and the Kagome lattice. In the first case, we can see that in the band structure the Dirac cones around the K and K' valleys are successfully retrieved. In the second case, we see an additional flat bands. The notebook for these two examples can be found in the Demo folder. 
 
 
 
+
+
+
+## Updates
+
+* Version-1.0 2025/07/31
+  
+  First version of MathTB2D!
